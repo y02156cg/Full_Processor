@@ -77,6 +77,6 @@ assign ALUctrl = (addi | sw | lw) ? 5'd0 : ((bne | blt) ? 5'd1 : ALUopcode);
 # Processor Datapath
 Processor datapath is shown below:
 
-In this figure, the 1to4 mux is used to choose the input to the register based on the overflow signal. And the data memory mux is used to select if data memory output data should be chosen to be input for register when lw is conducting. Otherwise, the mux should choose ALU output value for the register.
-![3241730245255_ pic](https://github.com/user-attachments/assets/bdb20b51-7660-4813-93ee-9be4b6db259f)
+In this figure, the 1to4 mux is used to choose the input to the register based on the overflow signal. And the data memory mux is used to select if data memory output data should be chosen to be input for register when lw is conducting. Otherwise, the mux should choose ALU output value for the register. A plus N unit is added to this datapath to conduct the PC branch to PC+1+N. Also, lots of mux based on the jumping control signals are also added to this processor so that the PC jump can be implemented based on these control signals.
+![3241730245255_ pic](IMG_0841.PNG)
 
